@@ -1,0 +1,58 @@
+﻿@using System.Text.RegularExpressions
+@page "/"
+
+<PageTitle>Inicio</PageTitle>
+
+Te damos la bienvenida a la herramienta de gestión de perfiles.
+
+<AuthorizeView>
+    <Authorizing>
+    </Authorizing>
+    <Authorized>
+        <h2>
+            Esto es lo que sabemos de vos:
+        </h2>
+        <ul>
+            @foreach (var claim in context.User.Claims)
+            {
+                @if (claim.Type == "role")
+                {
+                    string pattern = "CN=([^,]+)";
+
+                    MatchCollection matches = Regex.Matches(claim.Value.ToString(), pattern);
+
+                    var groups = "";
+                    foreach (Match match in matches)
+                    {
+                        string commonName = match.Groups[1].Value;
+                        groups += commonName + ", ";
+                    }
+
+                    <li><b>@claim.Type</b>: @groups</li>
+                }
+                else
+                {
+                    if (!ExcludedClaims.Contains(claim.Type))
+                    {
+                        <li><b>@claim.Type</b>: @claim.Value</li>
+                    }
+                }
+            }
+        </ul>
+    </Authorized>
+    <NotAuthorized>
+        <p class="not-authorized">Debe iniciar sesión para visualizar esta sección.</p>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    List<string> ExcludedClaims = new List<string>
+    {
+        // "s_hash",
+        // "sid",
+        // "auth_time",
+        // "idp",
+        // "amr"
+    };
+
+}

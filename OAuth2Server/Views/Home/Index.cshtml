@@ -1,0 +1,32 @@
+@using System.Diagnostics
+
+@{
+    // var version = FileVersionInfo.GetVersionInfo(typeof(IdentityServer8.Hosting.IdentityServerMiddleware).Assembly.Location).ProductVersion.Split('+').First();
+}
+
+<div class="welcome-page">
+    <h1>
+        <img src="~/icon.jpg">
+        Bienvenido al OAuth 2.0 Server/OpenId Connect Provider
+        @* <small class="text-muted">(versión @version)</small> *@
+    </h1>
+
+    <ul>
+        <li>
+            El servidor OpenId Connect publica un
+            <a href="~/.well-known/openid-configuration">documento de descubrimiento</a>
+            donde puedes encontrar metadatos y enlaces a todos los puntos finales, material de clave, etc.
+        </li>
+        <li>
+            Haz clic <a href="~/diagnostics">aquí</a> para ver las reclamaciones de tu sesión actual.
+        </li>
+        <li>
+            Haz clic <a href="~/grants">aquí</a> para administrar tus concesiones almacenadas.
+        </li>
+        @* <li>
+            Aquí tienes enlaces al
+            <a href="https://github.com/identityserver/IdentityServer8">repositorio de código fuente</a>,
+            y <a href="https://github.com/IdentityServer/IdentityServer8/tree/main/samples">muestras listas para usar</a>.
+        </li> *@
+    </ul>
+</div>

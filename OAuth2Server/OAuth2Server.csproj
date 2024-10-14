@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>74ff3995-84d2-4b76-9eb3-7fd9cd84c638</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="HigginsSoft.IdentityServer8" Version="8.0.4" />
+		<PackageReference Include="HigginsSoft.IdentityServer8.EntityFramework" Version="8.0.4" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="8.0.10" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+		<PackageReference Include="StackExchange.Redis" Version="2.8.16" />
+		<PackageReference Include="System.Text.Encodings.Web" Version="8.0.0" />
+		<PackageReference Include="Novell.Directory.Ldap.NETStandard" Version="3.6.0" />
+		<PackageReference Include="Oracle.EntityFrameworkCore" Version="8.23.60" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\CryptoHelper\CryptoHelper\CryptoHelper.csproj" />
+	  <ProjectReference Include="..\IdentityServer.LdapExtension\IdentityServer.LdapExtension.csproj" />
+	</ItemGroup>
+
+</Project>

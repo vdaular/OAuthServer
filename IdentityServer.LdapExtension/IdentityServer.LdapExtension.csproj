@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <Authors>Nordès Ménard-Lamarre</Authors>
+    <Version>2.1.14</Version>
+    <Company>HoNoSoFt</Company>
+    <Description>Extension for IdentityServer 4 in order to use LDAP as a plugin. It is also extensible enough in order to use custom LDAP schema such as OpenLdap or Active Directory.</Description>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseUrl>https://github.com/Nordes/IdentityServer8.LdapExtension/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Nordes/IdentityServer8.LdapExtension/</PackageProjectUrl>
+    <PackageReleaseNotes>Please visit the [GitHub repository](https://github.com/Nordes/IdentityServer8.LdapExtension/) for more details.</PackageReleaseNotes>
+    <PackageIconUrl>https://www.honosoft.com/img/logo.png</PackageIconUrl>
+    <Copyright>Nordès Ménard-Lamarre</Copyright>
+    <RepositoryUrl>https://github.com/Nordes/IdentityServer8.LdapExtension/</RepositoryUrl>
+    <PackageTags>IdentityServer8, Ldap, OpenLdap, ActiveDirectory</PackageTags>
+    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSource>true</IncludeSource>
+    <NeutralLanguage />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HigginsSoft.IdentityServer8" Version="8.0.4" />
+    <PackageReference Include="Novell.Directory.Ldap.NETStandard" Version="3.6.0" />
+    <PackageReference Include="StackExchange.Redis" Version="2.8.16" />
+  </ItemGroup>
+
+</Project>
