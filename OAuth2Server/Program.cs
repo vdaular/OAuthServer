@@ -48,7 +48,7 @@ var migrationsAssembly = typeof(Program).GetTypeInfo().Assembly.GetName().Name; 
 var identityServer = builder.Services.AddIdentityServer(options =>
 {
     // Definir la URI del emisor, que es la URL del servidor de identidad a través de API Gateway
-    options.IssuerUri = "https://localhost:3100";
+    options.IssuerUri = "https://idmadmin.gire.com:3100";
 
     // Configurar eventos para rastrear errores, información, fallos y éxitos
     //options.Events.RaiseErrorEvents = true;
@@ -117,14 +117,16 @@ identityServer.AddOperationalStore(options =>
 //identityServer.AddProfileService<ProfileService>();
 
 // Configuración de las credenciales de firmado de tokens
-if (builder.Environment.IsDevelopment())
-{
-    identityServer.AddDeveloperSigningCredential();  // Usar credenciales de desarrollo en modo desarrollo
-}
-else
-{
-    identityServer.AddSigningCredentialByRedis(appSettings);  // En producción, usar credenciales desde Redis
-}
+//if (builder.Environment.IsDevelopment())
+//{
+//    identityServer.AddDeveloperSigningCredential();  // Usar credenciales de desarrollo en modo desarrollo
+//}
+//else
+//{
+//    identityServer.AddSigningCredentialByRedis(appSettings);  // En producción, usar credenciales desde Redis
+//}
+identityServer.AddDeveloperSigningCredential();  // Usar credenciales de desarrollo en modo desarrollo
+
 
 //var aadApp = builder.Configuration.GetSection("AadApp");
 //builder.Services.AddOidcStateDataFormatterCache("AADandMicrosoft");
